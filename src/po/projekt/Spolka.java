@@ -1,4 +1,4 @@
-package com.company;
+package po.projekt;
 
 import java.util.Date;
 
@@ -13,8 +13,15 @@ public class Spolka {
     private float przychod;
     private float kapitalWlasny;
     private float kapitalZakladowy;
+    //liczba akcji,ktora zmienila wlasciciela
     private int wolumen;
+    //wartosc transakcji wykonanych na akcjach
     private float obroty;
+
+    public Spolka(){
+        obroty=0;
+        wolumen=0;
+    }
 
     public String getNazwa() {
         return nazwa;

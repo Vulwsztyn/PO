@@ -1,4 +1,4 @@
-package com.company;
+package po.projekt.Rynki;
 
 public class Rynek {
     private String nazwa;

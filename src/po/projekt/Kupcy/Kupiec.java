@@ -1,4 +1,4 @@
-package com.company;
+package po.projekt.Kupcy;
 
 public abstract class Kupiec {
     private String imie;

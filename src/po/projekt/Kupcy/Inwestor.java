@@ -1,4 +1,4 @@
-package com.company;
+package po.projekt.Kupcy;
 
 public class Inwestor extends Kupiec {
     private String PESEL;

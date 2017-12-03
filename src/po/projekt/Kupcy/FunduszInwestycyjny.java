@@ -1,4 +1,4 @@
-package com.company;
+package po.projekt.Kupcy;
 
 public class FunduszInwestycyjny extends Kupiec{
     private String nazwa;

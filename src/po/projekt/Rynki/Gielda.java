@@ -1,4 +1,7 @@
-package com.company;
+package po.projekt.Rynki;
+
+import po.projekt.Indeks;
+
 
 import java.util.ArrayList;
 

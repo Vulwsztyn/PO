@@ -1,13 +1,28 @@
 package com.company.model.Aktywa;
 
-import java.util.Date;
+import com.company.model.Rynki.Rynek;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
 
-public class Spolka {
-    private String nazwa;
-    private Date dataPierwszejWyceny;
+
+import java.time.LocalDate;
+
+public class Spolka extends Aktywa{
+    private ObjectProperty<LocalDate> dataPierwszejWyceny;
     private double kursOtwarcia;
-    private double minimalnyKurs;
-    private double maksymalnyKurs;
+    private double kursMinimalny;
+    private double kursMaksymalny;
+    private double kurs;
+
+    public double getKurs() {
+        return kurs;
+    }
+
+    public void setKurs(double kurs) {
+        this.kurs = kurs;
+    }
+
     private int liczbaAkcji;
     private double zysk;
     private double przychod;
@@ -18,28 +33,33 @@ public class Spolka {
     //wartosc transakcji wykonanych na akcjach
     private float obroty;
 
-    public Spolka(String nazwa,double kursOtwarcia,int liczbaAkcji){
-        this.nazwa=nazwa;
+    public Spolka(String nazwa,double kursOtwarcia,int liczbaAkcji,Rynek rynek){
+        this.setNazwa(nazwa);
         this.kursOtwarcia=kursOtwarcia;
         this.liczbaAkcji=liczbaAkcji;
-        obroty=0;
-        wolumen=0;
+        obroty=3;
+        wolumen=2;
+        zysk=1;
+        przychod=2;
+        kapitalWlasny=3;
+        kapitalZakladowy=4;
+        kursMinimalny =5;
+        kursMaksymalny =6;
+        dataPierwszejWyceny= new SimpleObjectProperty<>(LocalDate.of(1999, 2, 21));
+        this.setRynek(rynek);
     }
 
-    public String getNazwa() {
-        return nazwa;
+
+    public LocalDate getDataPierwszejWyceny() {
+        return dataPierwszejWyceny.get();
     }
 
-    public void setNazwa(String nazwa) {
-        this.nazwa = nazwa;
-    }
-
-    public Date getDataPierwszejWyceny() {
+    public ObjectProperty<LocalDate> dataPierwszejWycenyProperty() {
         return dataPierwszejWyceny;
     }
 
-    public void setDataPierwszejWyceny(Date dataPierwszejWyceny) {
-        this.dataPierwszejWyceny = dataPierwszejWyceny;
+    public void setDataPierwszejWyceny(LocalDate dataPierwszejWyceny) {
+        this.dataPierwszejWyceny.set(dataPierwszejWyceny);
     }
 
     public double getKursOtwarcia() {
@@ -50,20 +70,20 @@ public class Spolka {
         this.kursOtwarcia = kursOtwarcia;
     }
 
-    public double getMinimalnyKurs() {
-        return minimalnyKurs;
+    public double getKursMinimalny() {
+        return kursMinimalny;
     }
 
-    public void setMinimalnyKurs(double minimalnyKurs) {
-        this.minimalnyKurs = minimalnyKurs;
+    public void setKursMinimalny(double kursMinimalny) {
+        this.kursMinimalny = kursMinimalny;
     }
 
-    public double getMaksymalnyKurs() {
-        return maksymalnyKurs;
+    public double getKursMaksymalny() {
+        return kursMaksymalny;
     }
 
-    public void setMaksymalnyKurs(double maksymalnyKurs) {
-        this.maksymalnyKurs = maksymalnyKurs;
+    public void setKursMaksymalny(double kursMaksymalny) {
+        this.kursMaksymalny = kursMaksymalny;
     }
 
     public int getLiczbaAkcji() {

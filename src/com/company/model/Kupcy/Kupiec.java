@@ -1,27 +1,40 @@
 package com.company.model.Kupcy;
 
-public abstract class Kupiec {
-    private String imie;
+import com.company.model.ElementListyWidocznej;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
+public abstract class Kupiec extends ElementListyWidocznej{
+
     private String nazwisko;
 
     public abstract void kup();
     public abstract void sprzedaj();
-
-    //Settery
-    public void setImie(String imie) {
-        this.imie = imie;
-    }
+    private int budzet;
 
     public void setNazwisko(String nazwisko) {
         this.nazwisko = nazwisko;
-    }
-    //Gettery
-    public String getImie() {
-        return imie;
     }
 
     public String getNazwisko() {
         return nazwisko;
     }
 
+    public StringProperty getTypProperty() {
+        String typ=new String();
+        if (this instanceof Inwestor){
+            typ="Inwestor";
+        }
+        else if(this instanceof FunduszInwestycyjny) {
+            typ = "Fundusz Inwestycyjny";
+        }
+        return new SimpleStringProperty(typ);
+    }
+    public int getBudzet() {
+        return budzet;
+    }
+
+    public void setBudzet(int budzet) {
+        this.budzet = budzet;
+    }
 }

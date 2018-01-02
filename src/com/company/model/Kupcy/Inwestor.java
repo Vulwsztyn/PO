@@ -1,9 +1,14 @@
 package com.company.model.Kupcy;
 
+import javafx.beans.property.SimpleStringProperty;
+
 public class Inwestor extends Kupiec {
     private String PESEL;
-    private int budzetInwestycyjny;
 
+
+    public Inwestor(String nazwa){
+        this.setNazwa(nazwa);
+    }
     public void kup(){
 
     }
@@ -26,11 +31,5 @@ public class Inwestor extends Kupiec {
         this.PESEL = PESEL;
     }
 
-    public int getBudzetInwestycyjny() {
-        return budzetInwestycyjny;
-    }
 
-    public void setBudzetInwestycyjny(int budzetInwestycyjny) {
-        this.budzetInwestycyjny = budzetInwestycyjny;
-    }
 }

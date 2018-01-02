@@ -1,40 +1,26 @@
 package com.company.model.Rynki;
 
+import com.company.model.Aktywa.Waluta;
 import com.company.model.Indeks;
+import javafx.beans.property.SimpleStringProperty;
 
 
 import java.util.ArrayList;
 
 public class Gielda extends Rynek {
-    private String kraj;
-    private String waluta;
-    private String miasto;
+
     private String adresSiedziby;
     private ArrayList<Indeks> listaIndeksow;
 
-    public String getKraj() {
-        return kraj;
+    public Gielda(String nazwa){
+        this.setNazwa(nazwa);
+        this.setKraj("Kambodża");
+        this.setWaluta(new Waluta("Franek",new Rynek()));
+        this.setMiasto("Berlin");
+        this.setMarza(13.5);
     }
 
-    public void setKraj(String kraj) {
-        this.kraj = kraj;
-    }
 
-    public String getWaluta() {
-        return waluta;
-    }
-
-    public void setWaluta(String waluta) {
-        this.waluta = waluta;
-    }
-
-    public String getMiasto() {
-        return miasto;
-    }
-
-    public void setMiasto(String miasto) {
-        this.miasto = miasto;
-    }
 
     public String getAdresSiedziby() {
         return adresSiedziby;

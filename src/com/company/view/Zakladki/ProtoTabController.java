@@ -1,4 +1,4 @@
-package com.company.view;
+package com.company.view.Zakladki;
 
 import com.company.model.Ekonomia;
 import com.company.model.ElementListyWidocznej;
@@ -6,7 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
 
-public abstract class ProtoController {
+public abstract class ProtoTabController {
     // Reference to the Ekonomia class
     private Ekonomia ekonomia;
 
@@ -18,6 +18,7 @@ public abstract class ProtoController {
     public void setEkonomia(Ekonomia eko) {
         this.ekonomia = eko;
     }
+
     public abstract void wypelnijTabelka();
 
     public Ekonomia getEkonomia() {

@@ -1,14 +1,12 @@
-package com.company.view;
+package com.company.view.Zakladki;
 
-import com.company.Main;
-import com.company.model.Ekonomia;
 import com.company.model.Rynki.Rynek;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class RynkiController extends ProtoController{
+public class RynkiController extends ProtoTabController {
     @FXML
     private TableView<Rynek> tabelka;
     @FXML
@@ -58,7 +56,6 @@ public class RynkiController extends ProtoController{
         }
     }
 
-    @Override
     public void wypelnijTabelka() {
         tabelka.setItems(this.getEkonomia().getListaRynkow());
     }

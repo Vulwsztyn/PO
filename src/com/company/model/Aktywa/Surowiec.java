@@ -2,6 +2,7 @@ package com.company.model.Aktywa;
 
 import com.company.model.Rynki.Rynek;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 public class Surowiec extends Aktywa {
     private String jednostkaHandlowa;
@@ -9,6 +10,10 @@ public class Surowiec extends Aktywa {
     private float wartoscMinimalna;
     private float wartoscMaksymalna;
     Waluta waluta;
+
+    public StringProperty getTypProperty() {
+        return new SimpleStringProperty("Surowiec");
+    }
 
     public Waluta getWaluta() {
         return waluta;

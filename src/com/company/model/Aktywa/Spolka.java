@@ -4,6 +4,7 @@ import com.company.model.Rynki.Rynek;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 
 import java.time.LocalDate;
@@ -47,6 +48,9 @@ public class Spolka extends Aktywa{
         kursMaksymalny =6;
         dataPierwszejWyceny= new SimpleObjectProperty<>(LocalDate.of(1999, 2, 21));
         this.setRynek(rynek);
+    }
+    public StringProperty getTypProperty() {
+        return new SimpleStringProperty("Akcja");
     }
 
 

@@ -23,6 +23,11 @@
               <MenuItem mnemonicParsing="false" text="Delete" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Dodaj....">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleDodaj" text="Otwórz Panel Dodawania" />
+              </items>
+            </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
               <MenuItem mnemonicParsing="false" text="About" />

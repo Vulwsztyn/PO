@@ -1,4 +1,4 @@
-package com.company.view;
+package com.company.view.Zakladki;
 
 import com.company.model.Aktywa.Aktywa;
 import com.company.model.Kupcy.FunduszInwestycyjny;
@@ -10,7 +10,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.GridPane;
 
-public class KupcyController extends ProtoController{
+public class KupcyController extends ProtoTabController {
     @FXML
     private TableView<Kupiec> tabelka;
     @FXML
@@ -103,7 +103,6 @@ public class KupcyController extends ProtoController{
     }
 
 
-    @Override
     public void wypelnijTabelka() {
         tabelka.setItems(this.getEkonomia().getListaKupcow());
     }

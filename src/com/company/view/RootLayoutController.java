@@ -1,16 +1,18 @@
 package com.company.view;
 
 import com.company.Main;
-import com.company.model.Ekonomia;
+import com.company.view.Zakladki.ProtoTabController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 
 public class RootLayoutController{
     @FXML
@@ -19,34 +21,44 @@ public class RootLayoutController{
     private AnchorPane AktywaPane;
     @FXML
     private AnchorPane RynekPane;
+
+    public TextArea getConsoleOutputTextArea() {
+        return consoleOutputTextArea;
+    }
+
     @FXML
     private AnchorPane KupcyPane;
     @FXML
     private Console console;
+
+    Main main;
+    private Stage dialogStage;
 
     /**
      * The constructor.
      * The constructor is called before the initialize() method.
      */
     public RootLayoutController() {
+
     }
 
     @FXML
     private void initialize() {
-        makeConsolePrintSouts();
+
     }
-    public void  setTabContents(Ekonomia eko)
+
+    public void  setTabContents()
     {
-        initMyAnchors(AktywaPane,"view/Aktywa.fxml",eko);
-        initMyAnchors(RynekPane,"view/Rynki.fxml",eko);
-        initMyAnchors(KupcyPane,"view/Kupcy.fxml",eko);
+        initMyAnchors(AktywaPane,"view/Zakladki/Aktywa.fxml");
+        initMyAnchors(RynekPane,"view/Zakladki/Rynki.fxml");
+        initMyAnchors(KupcyPane,"view/Zakladki/Kupcy.fxml");
     }
     /**
      * Loads content into tabs of RootLayout
      * @param pane AnchorPane that we want to fill with fxml file
      * @param loc location of fxml file we want to lad into Pane
      */
-    private void initMyAnchors(AnchorPane pane, String loc,Ekonomia eko){
+    private void initMyAnchors(AnchorPane pane, String loc){
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource(loc));
@@ -56,23 +68,13 @@ public class RootLayoutController{
         catch(IOException e){
             System.out.println("Nie udało się załadować zawartści zakładek");
         }
-        ProtoController controller = loader.getController();
-        controller.setEkonomia(eko);
+        ProtoTabController controller = loader.getController();
+        controller.setEkonomia(main.getEkonomia());
         controller.wypelnijTabelka();
     }
 
-
-
-    /**
-     * Sets sout to TextArea in Application Window
-     */
-    private void makeConsolePrintSouts(){
-
-        console =  new Console(consoleOutputTextArea);
-        PrintStream ps = new PrintStream(console, true);
-        System.setOut(ps);
-        System.setErr(ps);
-
+    public void setDialogStage(Stage dialogStage) {
+        this.dialogStage = dialogStage;
     }
 
     /**
@@ -90,5 +92,15 @@ public class RootLayoutController{
         public void write(int i) throws IOException {
             output.appendText(String.valueOf((char) i));
         }
+    }
+
+    public void setMainApp(Main main) {
+        this.main = main;
+        setTabContents();
+    }
+
+    @FXML
+    private void handleDodaj() {
+        boolean okClicked = main.showPanelDodawania();
     }
 }

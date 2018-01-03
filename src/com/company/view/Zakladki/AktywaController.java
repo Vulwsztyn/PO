@@ -1,4 +1,4 @@
-package com.company.view;
+package com.company.view.Zakladki;
 
 import com.company.model.Aktywa.Aktywa;
 import com.company.model.Aktywa.Spolka;
@@ -10,7 +10,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.GridPane;
 
-public class AktywaController extends ProtoController{
+public class AktywaController extends ProtoTabController {
     @FXML
     private TableView<Aktywa> tabelka;
     @FXML
@@ -73,6 +73,10 @@ public class AktywaController extends ProtoController{
     @FXML
     private Label walutaNazwa;
 
+
+
+
+
     /**
      * The constructor.
      * The constructor is called before the initialize() method.
@@ -87,10 +91,9 @@ public class AktywaController extends ProtoController{
         typColumn.setCellValueFactory(
                 cellData -> cellData.getValue().getTypProperty());
         rynekColumn.setCellValueFactory(
-                cellData -> cellData.getValue().getRynekProperty());
+                cellData -> cellData.getValue().getRynekNazwaProperty());
 
         showVerseDetails(null);
-
 
         tabelka.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showVerseDetails(newValue));
@@ -141,7 +144,6 @@ public class AktywaController extends ProtoController{
 //        gridWaluta.setVisible(false);
     }
 
-        @Override
     public void wypelnijTabelka() {
         tabelka.setItems(this.getEkonomia().getListaAktywow());
     }

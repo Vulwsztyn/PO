@@ -1,12 +1,13 @@
 package com.company.model;
 
 import com.company.model.Aktywa.Spolka;
+import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
 
 public class Indeks {
     private String nazwa;
-    private ArrayList<Spolka> listaSpolek;
+    private ObservableList<Spolka> listaSpolek;
     private float wyniki;
 
     public String getNazwa() {
@@ -17,11 +18,11 @@ public class Indeks {
         this.nazwa = nazwa;
     }
 
-    public ArrayList<Spolka> getListaSpolek() {
+    public ObservableList<Spolka> getListaSpolek() {
         return listaSpolek;
     }
 
-    public void setListaSpolek(ArrayList<Spolka> listaSpolek) {
+    public void setListaSpolek(ObservableList<Spolka> listaSpolek) {
         this.listaSpolek = listaSpolek;
     }
 

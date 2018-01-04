@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.view.RootLayoutController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.view.RootLayoutController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -37,7 +37,7 @@
       </MenuBar>
    </top>
    <bottom>
-      <TextArea fx:id="consoleOutputTextArea" prefHeight="64.0" prefWidth="1000.0" text="Tu będą wypisywane informacje z konsoli (np. Kupiec Franek kupił 1000 uncji złota na Rynku Walut RynekWalut700 za 25 GBP).&#10;Label'e w &quot;informacje o giełdzie będą się zmienać w zależności od wybranej zakładki (np. &quot;Rynek Walut2&quot;),&#10;a &quot;informacje o walucie/surowcu/spółce/inwestorze/funduszu&quot; w zależności od zaznaczonego rekordu w tabeli.&#10;Przyciski będą powodować pojawienie się okna z TextFieldami umożliwiającymi dostowowanie wartości pól rzeczy, którą chcemy dodać&#10;A przynajmniej mam taką nadzieję.&#10;&#10;TODO:&#10;lista krajów&#10;kurs każdej pary walut&#10;lista indeksów spółek&#10;" BorderPane.alignment="CENTER" />
+      <TextArea fx:id="consoleOutputTextArea" prefHeight="128.0" prefWidth="1000.0" text="Tu będą wypisywane informacje z konsoli (np. Kupiec Franek kupił 1000 uncji złota na Rynku Walut RynekWalut700 za 25 GBP).&#10;Label'e w &quot;informacje o giełdzie będą się zmienać w zależności od wybranej zakładki (np. &quot;Rynek Walut2&quot;),&#10;a &quot;informacje o walucie/surowcu/spółce/inwestorze/funduszu&quot; w zależności od zaznaczonego rekordu w tabeli.&#10;Przyciski będą powodować pojawienie się okna z TextFieldami umożliwiającymi dostowowanie wartości pól rzeczy, którą chcemy dodać&#10;A przynajmniej mam taką nadzieję.&#10;&#10;TODO:&#10;lista krajów&#10;kurs każdej pary walut&#10;lista indeksów spółek&#10;" BorderPane.alignment="CENTER" />
    </bottom>
    <center>
       <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">

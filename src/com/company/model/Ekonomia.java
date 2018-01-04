@@ -12,6 +12,7 @@ import com.company.model.Rynki.Gielda;
 import com.company.model.Rynki.Rynek;
 import com.company.model.Rynki.RynekSurowcow;
 import com.company.model.Rynki.RynekWalut;
+import com.company.util.RandomUtil;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -35,22 +36,16 @@ public class Ekonomia {
      */
     private ObservableList<Kupiec> listaKupcow = FXCollections.observableArrayList();
 
-
-    private transient Map<String, ArrayList<String>> losowe = new HashMap<String, ArrayList<String>>();
-
-    public Map<String, ArrayList<String>> getLosowe() {
-        return losowe;
-    }
-    public String getLosowaRzecz(String KtoraLista){
-        int size = losowe.get(KtoraLista).size();
-        int index = new Random().nextInt(size);
-        return losowe.get(KtoraLista).get(index);
-    }
+    RandomUtil rand = new RandomUtil();
 
     Main main;
 
     public ObservableList<Aktywa> getListaAktywow() {
         return listaAktywow;
+    }
+
+    public RandomUtil getRand() {
+        return rand;
     }
 
     public ObservableList<Rynek> getListaRynkow() {
@@ -88,38 +83,12 @@ public class Ekonomia {
     }
 
     public void initEkonomii(){
-        wczytajLosowe();
+        rand.wczytajLosowe();
         listaRynkow.add(new RynekWalut("Kaczogrodzki Rynek Walut"));
         listaAktywow.add(new Waluta("Pierwsza Dziesięciocentówka",1,listaRynkow.get(0)));
         listaKupcow.add(new Inwestor("Sknerus","McKwacz"));
     }
 
-    public void wczytajLosowe() {
-        List<String> lista = Arrays.asList("Firmy", "Imiona", "Nazwiska", "Rynki", "Surowce", "Waluty");
-        lista.forEach((e)->losowe.put(e,wczytajZPlikuLosowe(e)));
-    }
-
-    public ArrayList<String> wczytajZPlikuLosowe( String loc){
-        ArrayList<String> lista = new ArrayList<String>();
-        String dir="src/com/company/model/randomStuff/";
-        String txt=".txt";
-        loc=dir+loc+txt;
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(loc));
-            String line;
-            int a=0;
-            while((line=reader.readLine())!=null){
-                lista.add(line);
-                a++;
-            }
-            print(String.valueOf(a));
-
-        }
-        catch(IOException e){
-            print("Nie znajduje pliku:{");
-        }
-        return lista;
-    }
 
     public void print(String text){
         licznikWiadomosci++;

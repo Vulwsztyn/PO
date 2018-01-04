@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.view.Dodawanie.PanelDodawaniaController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.view.Dodawanie.PanelDodawaniaController">
    <children>
       <GridPane fx:id="gridSpolka" layoutX="14.0" layoutY="15.0">
         <columnConstraints>
@@ -48,15 +48,18 @@
          <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
             <Label text="Nazwa Waluty::" />
             <Label text="Skrót:" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tfWalutaNazwa" GridPane.columnIndex="1" />
+            <TextField fx:id="tfWalutaSkrot" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tfWalutaWartosc" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Wartość Początkowa:" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <GridPane fx:id="gridSpolka2" layoutX="259.0" layoutY="357.0">
+      <GridPane fx:id="gridSpolka2" layoutX="259.0" layoutY="407.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -73,13 +76,13 @@
             <Label text="Waluta:" GridPane.rowIndex="2" />
             <Label GridPane.rowIndex="3" />
             <Label text="Wartość Początkowa:" GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="tfSurowiecNazwa" GridPane.columnIndex="1" />
+            <TextField fx:id="tfSurowiecJednostka" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tfSurowiecWartosc" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <ComboBox fx:id="walutaBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <GridPane fx:id="gridSpolka21" layoutX="259.0" layoutY="214.0">
+      <GridPane fx:id="gridSpolka21" layoutX="260.0" layoutY="254.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -95,14 +98,14 @@
             <Label text="Nazwisko Inwestora:" GridPane.rowIndex="1" />
             <Label text="PESEL:" GridPane.rowIndex="2" />
             <Label GridPane.rowIndex="3" />
-            <Label text="Budżet" GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Budżet:" GridPane.rowIndex="3" />
+            <TextField fx:id="tfInwestorImie" GridPane.columnIndex="1" />
+            <TextField fx:id="tfInwestorNazwisko" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tfInwestorPESEL" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="tfInwestorBudzet" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
-      <GridPane fx:id="gridSpolka211" layoutX="14.0" layoutY="207.0">
+      <GridPane fx:id="gridSpolka211" layoutX="14.0" layoutY="228.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -111,18 +114,15 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Label text="Imię Zarządcy:" GridPane.rowIndex="1" />
-            <Label text="Nazwisko Zarządcy:" GridPane.rowIndex="2" />
-            <Label GridPane.rowIndex="3" />
-            <Label text="Budżet" GridPane.rowIndex="3" />
+            <Label text="Zarządca:" GridPane.rowIndex="1" />
+            <Label GridPane.rowIndex="2" />
+            <Label text="Budżet" GridPane.rowIndex="2" />
             <Label text="Nazwa Funduszu:" />
-            <TextField GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="tfFunduszNazwa" GridPane.columnIndex="1" />
+            <TextField fx:id="tfFunduszZarzadca" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tfFunduszBudzet" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <GridPane fx:id="gridSpolka212" layoutX="280.0" layoutY="15.0">
@@ -137,6 +137,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
             <Label text="Typ Rynku:" />
@@ -145,13 +146,15 @@
             <Label GridPane.rowIndex="3" />
             <Label text="Waluta:" GridPane.rowIndex="3" />
             <Label text="Miasto:" GridPane.rowIndex="4" />
-            <Label text="Marża:" GridPane.rowIndex="5" />
+            <Label text="Marża:" GridPane.rowIndex="6" />
             <ComboBox fx:id="typRynkuBox" prefWidth="150.0" GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="tfRynekNazwa" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tfRynekKraj" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="tfRynekMiasto" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="tfRynekMarza" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="Adres:" GridPane.rowIndex="5" />
+            <TextField fx:id="tfRynekUlica" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <ComboBox fx:id="walutaBox1" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <ButtonBar layoutX="417.0" layoutY="534.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0">

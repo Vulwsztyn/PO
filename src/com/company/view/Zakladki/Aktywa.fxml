@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<?import java.util.ArrayList?>
-<AnchorPane prefHeight="690.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.view.Zakladki.AktywaController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" snapToPixel="false" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.view.Zakladki.AktywaController">
    <children>
       <SplitPane dividerPositions="0.5" prefHeight="690.0" prefWidth="1300.0">
          <items>

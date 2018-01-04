@@ -16,13 +16,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.io.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class Ekonomia {
     private int licznikWiadomosci=0;
@@ -39,12 +35,18 @@ public class Ekonomia {
      */
     private ObservableList<Kupiec> listaKupcow = FXCollections.observableArrayList();
 
-    public transient Set<String> losoweImiona;
-    public transient Set<String> losoweNazwiska;
-    public transient Set<String> losoweFirmy = new HashSet<String>();
-    public transient Set<String> losoweRynki;
-    public transient Set<String> losoweSurowce;
-    public transient Set<String> losoweWaluty;
+
+    private transient Map<String, ArrayList<String>> losowe = new HashMap<String, ArrayList<String>>();
+
+    public Map<String, ArrayList<String>> getLosowe() {
+        return losowe;
+    }
+    public String getLosowaRzecz(String KtoraLista){
+        int size = losowe.get(KtoraLista).size();
+        int index = new Random().nextInt(size);
+        return losowe.get(KtoraLista).get(index);
+    }
+
     Main main;
 
     public ObservableList<Aktywa> getListaAktywow() {
@@ -93,11 +95,12 @@ public class Ekonomia {
     }
 
     public void wczytajLosowe() {
-
-        wczytajZPliku(losoweFirmy, "Firmy");
+        List<String> lista = Arrays.asList("Firmy", "Imiona", "Nazwiska", "Rynki", "Surowce", "Waluty");
+        lista.forEach((e)->losowe.put(e,wczytajZPlikuLosowe(e)));
     }
 
-    public void wczytajZPliku(Set<String> lista,String loc){
+    public ArrayList<String> wczytajZPlikuLosowe( String loc){
+        ArrayList<String> lista = new ArrayList<String>();
         String dir="src/com/company/model/randomStuff/";
         String txt=".txt";
         loc=dir+loc+txt;
@@ -110,10 +113,12 @@ public class Ekonomia {
                 a++;
             }
             print(String.valueOf(a));
+
         }
         catch(IOException e){
             print("Nie znajduje pliku:{");
         }
+        return lista;
     }
 
     public void print(String text){

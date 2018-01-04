@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.view.Dodawanie.PanelDodawaniaController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.view.Dodawanie.PanelDodawaniaController">
    <children>
       <GridPane fx:id="gridSpolka" layoutX="14.0" layoutY="15.0">
         <columnConstraints>
@@ -29,15 +29,15 @@
             <Label text="Nazwa spolki:" />
             <Label text="Kurs otwarcia:" GridPane.rowIndex="1" />
             <Label text="Początkowa liczba akcji:" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="tfSpolkaNazwa" GridPane.columnIndex="1" />
+            <TextField fx:id="tfSpolkaKurs" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tfSpolkaLiczbaAkcji" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label text="Kapitał własny:" GridPane.rowIndex="4" />
             <Label text="Kapitał zakładowy:" GridPane.rowIndex="5" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="tfSpolkaKapitalWlasny" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="tfSpolkaKapitalZakladowy" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Label text="Wartość:" GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="tfSpolkaWartosc" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <GridPane fx:id="gridSpolka1" layoutX="14.0" layoutY="346.0">

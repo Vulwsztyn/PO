@@ -76,7 +76,7 @@ public class KupcyController extends ProtoTabController {
                 hideGrids(gridFundusz);
                 funduszNazwa.setText(String.valueOf(((FunduszInwestycyjny) wiersz).getNazwa()));
                 funduszBudzet.setText(String.valueOf(((FunduszInwestycyjny) wiersz).getBudzet()));
-                funduszZarzadca.setText(String.valueOf(((FunduszInwestycyjny) wiersz).getZarzadca()));
+                funduszZarzadca.setText(String.valueOf(((FunduszInwestycyjny) wiersz).getZarzadcaImie()+" "+((FunduszInwestycyjny) wiersz).getZarzadcaNazwisko()));
 
 
             }

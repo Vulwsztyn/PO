@@ -49,9 +49,9 @@ public class RootLayoutController{
 
     public void  setTabContents()
     {
-        initMyAnchors(AktywaPane,"view/Zakladki/Aktywa.fxml");
-        initMyAnchors(RynekPane,"view/Zakladki/Rynki.fxml");
-        initMyAnchors(KupcyPane,"view/Zakladki/Kupcy.fxml");
+        initMyAnchors(AktywaPane,"Zakladki/Aktywa.fxml");
+        initMyAnchors(RynekPane,"Zakladki/Rynki.fxml");
+        initMyAnchors(KupcyPane,"Zakladki/Kupcy.fxml");
     }
     /**
      * Loads content into tabs of RootLayout
@@ -61,7 +61,7 @@ public class RootLayoutController{
     private void initMyAnchors(AnchorPane pane, String loc){
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(Main.class.getResource(loc));
+        loader.setLocation(RootLayoutController.class.getResource(loc));
         try {
             pane.getChildren().setAll((Node) loader.load());
         }

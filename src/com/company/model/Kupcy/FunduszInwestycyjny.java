@@ -1,21 +1,30 @@
 package com.company.model.Kupcy;
 
-import javafx.beans.property.SimpleStringProperty;
-
 public class FunduszInwestycyjny extends Kupiec{
-    String zarzadca;
+    private String zarzadcaImie;
 
-    public String getZarzadca() {
-        return zarzadca;
+    public String getZarzadcaNazwisko() {
+        return zarzadcaNazwisko;
     }
 
-    public void setZarzadca(String zarzadca) {
-        this.zarzadca = zarzadca;
+    public void setZarzadcaNazwisko(String zarzadcaNazwisko) {
+        this.zarzadcaNazwisko = zarzadcaNazwisko;
+    }
+
+    private String zarzadcaNazwisko;
+
+    public String getZarzadcaImie() {
+        return zarzadcaImie;
+    }
+
+    public void setZarzadcaImie(String zarzadcaImie) {
+        this.zarzadcaImie = zarzadcaImie;
     }
 
     public FunduszInwestycyjny(String nazwa){
         this.setNazwa(nazwa);
-        zarzadca="Stefan";
+        zarzadcaImie ="Stefan";
+        zarzadcaNazwisko="Schickbaum";
     }
 
     public void kup(){

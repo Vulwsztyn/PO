@@ -145,6 +145,7 @@ public class AktywaController extends ProtoTabController {
     }
 
     public void wypelnijTabelka() {
+
         tabelka.setItems(this.getEkonomia().getListaAktywow());
     }
 }
